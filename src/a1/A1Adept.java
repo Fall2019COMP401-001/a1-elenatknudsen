@@ -27,8 +27,8 @@ public class A1Adept {
 			totals[j]+= scan.nextInt() * search(scan.next(), items, prices);
 		}
 		}
-		System.out.print("Biggest: "+ names[max(totals)]+" ("+ String.format("%.2f", totals[max(totals)])+")");
-		System.out.print("Smallest: "+ names[min(totals)]+" ("+ String.format("%.2f", totals[min(totals)])+")");
+		System.out.print("Biggest: "+ names[max(totals)]+" ("+ String.format("%.2f", totals[max(totals)])+")"+"\n");
+		System.out.print("Smallest: "+ names[min(totals)]+" ("+ String.format("%.2f", totals[min(totals)])+")"+"\n");
 		System.out.print("Average: "+ average(totals));
 		}
 		

@@ -28,7 +28,7 @@ public class A1Novice {
 
 			}
 		for (int k=0; k<names.length; k++) {
-			System.out.print(names[k]);
+			System.out.print(names[k]+"\n");
 		}
 			
 		}
