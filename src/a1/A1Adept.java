@@ -46,6 +46,7 @@ public class A1Adept {
 		for (int m=0; m<totals.length; m++) {
 		if (totals[m] > maximum) {
 			index = m;
+			maximum = totals[m];
 		}
 		}
 		return index;
