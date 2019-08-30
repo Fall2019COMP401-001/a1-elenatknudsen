@@ -13,6 +13,7 @@ public class A1Jedi {
 		int[] customers = new int[types];
 		int[] quantity = new int[types];
 		double filler = 0;
+		
 		for (int i=0; i<types; i++) {
 			items[i] = scan.next();
 			filler = scan.nextDouble();
@@ -23,23 +24,28 @@ public class A1Jedi {
 		int amount = 0;
 		String extra = "";
 		int numberOfTypes = 0;
+		
 		for (int k=0; k<people; k++) {
-		extra = scan.next();
+		extra = scan.next()+scan.next();
 		numberOfTypes = scan.nextInt();
+		
 		for (int m=0; m<numberOfTypes; m++) {
 		amount = scan.nextInt();
 		check = scan.next();
+		
 		if (search(items, check) > -1) {
 		customers[search(items, check)] += 1;
 		quantity[search(items, check)] += amount;
 		}
 		}
 		}
+		
 		for (int l=0; l<items.length; l++) {
-		if (customers[l] < 1) {
-			System.out.print("No customers bought " + items[l]);
+		
+			if (customers[l] < 1) {
+			System.out.print("No customers bought " + items[l]+"\n");
 		} else {
-		System.out.print(customers[l] +" customers bought "+ quantity[l] + " " + items[l]);
+		System.out.print(customers[l] +" customers bought "+ quantity[l] + " " + items[l]+"\n");
 		}
 	}
 	}
