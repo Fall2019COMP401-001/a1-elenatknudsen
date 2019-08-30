@@ -26,12 +26,12 @@ public class A1Jedi {
 		int numberOfTypes = 0;
 		
 		for (int k=0; k<people; k++) {
-		extra = scan.next()+scan.next();
+		extra = scan.next() + scan.next();
 		numberOfTypes = scan.nextInt();
 		
-		for (int m=0; m<numberOfTypes; m++) {
-		amount = scan.nextInt();
-		check = scan.next();
+			for (int m=0; m<numberOfTypes; m++) {
+				amount = scan.nextInt();
+				check = scan.next();
 		
 		if (search(items, check) > -1) {
 		customers[search(items, check)] += 1;
