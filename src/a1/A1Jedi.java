@@ -8,6 +8,7 @@ public class A1Jedi {
 		
 		Scanner scan = new Scanner(System.in);
 
+		int test = 0;
 		int types = scan.nextInt();
 		String[] items = new String[types];
 		int[] customers = new int[types];
