@@ -49,7 +49,7 @@ public class A1Adept {
 		// Prints the output in the correct format
 		System.out.print("Biggest: "+ names[max(totals)]+" ("+ String.format("%.2f", totals[max(totals)])+")"+"\n");
 		System.out.print("Smallest: "+ names[min(totals)]+" ("+ String.format("%.2f", totals[min(totals)])+")"+"\n");
-		System.out.print("Average: "+ average(totals));
+		System.out.println("Average: "+ average(totals));
 		}
 	
 	// A method for finding the item type to get
