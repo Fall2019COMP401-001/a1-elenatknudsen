@@ -7,8 +7,6 @@ public class A1Jedi {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-
-		int test = 0;
 		int types = scan.nextInt();
 		String[] items = new String[types];
 		int[] customers = new int[types];
@@ -25,20 +23,25 @@ public class A1Jedi {
 		int amount = 0;
 		String extra = "";
 		int numberOfTypes = 0;
+		boolean[] yeah = new boolean[types];
 		
 		for (int k=0; k<people; k++) {
 		extra = scan.next() + scan.next();
 		numberOfTypes = scan.nextInt();
 		
 			for (int m=0; m<numberOfTypes; m++) {
+				for (int p=0; p<types; p++) {
+					yeah[p] = false;
+				}
 				amount = scan.nextInt();
 				check = scan.next();
-		
-		if (search(items, check) > -1) {
-		customers[search(items, check)] += 1;
-		quantity[search(items, check)] += amount;
-		}
-		}
+			
+				if (search(items, check) > -1) {
+					yeah[search(items, check)] = true;
+					quantity[search(items, check)] += amount;
+					customerTotal(yeah, customers);
+				}
+			}
 		}
 		
 		for (int l=0; l<items.length; l++) {
@@ -59,5 +62,13 @@ public class A1Jedi {
 		}
 	}
 	 return index;
+}
+static void customerTotal(boolean[] yeah, int[] customers) {
+	for (int n=0; n<yeah.length; n++) {
+		if (yeah[n]) {
+			customers[n]++;
+		}
+	}
+	return;
 }
 }
