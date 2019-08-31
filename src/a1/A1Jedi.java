@@ -34,18 +34,17 @@ public class A1Jedi {
 				quantity[search(items,check)]+=amount;
 				if (search(items, check)>-1 && (add<1 ||customers[search(items,check)]<1)) {
 					customers[search(items, check)]++;
-					//quantity[search(items, check)] += amount;
 					add++;
-					}
 				}
+				add=0;
+			}
 		}
 		
 		for (int l=0; l<items.length; l++) {
-		
 			if (customers[l] < 1) {
-			System.out.print("No customers bought " + items[l]+"\n");
+			System.out.println("No customers bought " + items[l]);
 			} else {
-				System.out.print(customers[l] +" customers bought "+ quantity[l] + " " + items[l]+"\n");
+				System.out.println(customers[l] +" customers bought "+ quantity[l] + " " + items[l]);
 			}
 		}
 	}
