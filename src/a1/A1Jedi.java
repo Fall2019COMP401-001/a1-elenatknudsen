@@ -23,35 +23,31 @@ public class A1Jedi {
 		int amount = 0;
 		String extra = "";
 		int numberOfTypes = 0;
-		boolean[] yeah = new boolean[types];
 		
 		for (int k=0; k<people; k++) {
 		extra = scan.next() + scan.next();
 		numberOfTypes = scan.nextInt();
-		
+		int add =0;
 			for (int m=0; m<numberOfTypes; m++) {
-				for (int p=0; p<types; p++) {
-					yeah[p] = false;
-				}
 				amount = scan.nextInt();
 				check = scan.next();
-			
-				if (search(items, check) > -1) {
-					yeah[search(items, check)] = true;
-					quantity[search(items, check)] += amount;
-					customerTotal(yeah, customers);
+				quantity[search(items,check)]+=amount;
+				if (search(items, check)>-1 && (add<1 ||customers[search(items,check)]<1)) {
+					customers[search(items, check)]++;
+					//quantity[search(items, check)] += amount;
+					add++;
+					}
 				}
-			}
 		}
 		
 		for (int l=0; l<items.length; l++) {
 		
 			if (customers[l] < 1) {
 			System.out.print("No customers bought " + items[l]+"\n");
-		} else {
-		System.out.print(customers[l] +" customers bought "+ quantity[l] + " " + items[l]+"\n");
+			} else {
+				System.out.print(customers[l] +" customers bought "+ quantity[l] + " " + items[l]+"\n");
+			}
 		}
-	}
 	}
 
  static int search(String[] items, String check) {
@@ -62,13 +58,5 @@ public class A1Jedi {
 		}
 	}
 	 return index;
-}
-static void customerTotal(boolean[] yeah, int[] customers) {
-	for (int n=0; n<yeah.length; n++) {
-		if (yeah[n]) {
-			customers[n]++;
-		}
-	}
-	return;
 }
 }
