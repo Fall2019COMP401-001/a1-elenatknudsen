@@ -23,23 +23,24 @@ public class A1Jedi {
 		int amount = 0;
 		String extra = "";
 		int numberOfTypes = 0;
+		boolean[] doneThat = new boolean[types];
 		
 		for (int k=0; k<people; k++) {
 		extra = scan.next() + scan.next();
 		numberOfTypes = scan.nextInt();
-		int add =0;
+			for (int i=0; i<types; i++) {
+				doneThat[i] = false;
+			}
 			for (int m=0; m<numberOfTypes; m++) {
 				amount = scan.nextInt();
 				check = scan.next();
 				quantity[search(items,check)]+=amount;
-				if (search(items, check)>-1 && (add<1 ||customers[search(items,check)]<1)) {
-					customers[search(items, check)]++;
-					add++;
+				if (!doneThat[search(items, check)]) {
+						customers[search(items, check)]++;
+						doneThat[search(items, check)]=true;
 				}
-				add=0;
 			}
 		}
-		
 		for (int l=0; l<items.length; l++) {
 			if (customers[l] < 1) {
 			System.out.println("No customers bought " + items[l]);
